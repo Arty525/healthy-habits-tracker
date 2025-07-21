@@ -1,0 +1,146 @@
+[
+  {
+    "model": "users.User",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user1@example.com",
+      "first_name": "Иван",
+      "last_name": "Иванов",
+      "phone_number": "+79991112233",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user2@example.com",
+      "first_name": "Петр",
+      "last_name": "Петров",
+      "phone_number": "+79992223344",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user3@example.com",
+      "first_name": "Сергей",
+      "last_name": "Сергеев",
+      "phone_number": "+79993334455",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-03T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user4@example.com",
+      "first_name": "Анна",
+      "last_name": "Аннова",
+      "phone_number": "+79994445566",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-04T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user5@example.com",
+      "first_name": "Мария",
+      "last_name": "Марьина",
+      "phone_number": "+79995556677",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-05T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user6@example.com",
+      "first_name": "Дмитрий",
+      "last_name": "Дмитриев",
+      "phone_number": "+79996667788",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-06T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user7@example.com",
+      "first_name": "Ольга",
+      "last_name": "Ольгова",
+      "phone_number": "+79997778899",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-07T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user8@example.com",
+      "first_name": "Алексей",
+      "last_name": "Алексеев",
+      "phone_number": "+79998889900",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-08T00:00:00Z"
+    }
+  },
+  {
+    "model": "users.User",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user9@example.com",
+      "first_name": "Екатерина",
+      "last_name": "Екатеринина",
+      "phone_number": "+79999990011",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-01-09T00:00:00Z"
+    }
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 1,
+    "fields": {
+      "title": "Утренняя зарядка",
+      "owner": 1,
+      "place": "Домашний спортзал",
+      "time": "2023-01-01T07:00:00Z",
+      "action": "Делать упражнения 15 минут",
+      "is_healthy": true,
+      "nice_habit": 1,
+      "period": "1 day",
+      "reward": "Кофе",
+      "action_time": "00:15:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 2,
+    "fields": {
+      "title": "Пить воду",
+      "owner": 2,
+      "place": "Офис",
+      "time": "2023-01-01T09:00:00Z",
+      "action": "Выпивать стакан воды",
+      "is_healthy": true,
+      "nice_habit": 2,
+      "period": "2 hours",
+      "reward": "Чай",
+      "action_time": "00:02:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 3,
+    "fields": {
+      "title": "Бег",
+      "owner": 3,
+      "place": "Парк",
+      "time": "2023-01-02T06:30:00Z",
+      "action": "Бегать 30 минут",
+      "is_healthy": true,
+      "nice_habit": 3,
+      "period": "2 days",
+      "reward": "Прогулка",
+      "action_time": "00:30:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 4,
+    "fields": {
+      "title": "Здоровый завтрак",
+      "owner": 4,
+      "place": "Кухня",
+      "time": "2023-01-02T08:00:00Z",
+      "action": "Приготовить овсянку",
+      "is_healthy": true,
+      "nice_habit": 4,
+      "period": "1 day",
+      "reward": "Фрукт",
+      "action_time": "00:20:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 5,
+    "fields": {
+      "title": "Отжимания",
+      "owner": 5,
+      "place": "Дом",
+      "time": "2023-01-03T07:15:00Z",
+      "action": "Сделать 30 отжиманий",
+      "is_healthy": true,
+      "nice_habit": 5,
+      "period": "1 day",
+      "reward": "Музыка",
+      "action_time": "00:05:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 6,
+    "fields": {
+      "title": "Растяжка",
+      "owner": 6,
+      "place": "Йога-коврик",
+      "time": "2023-01-03T21:00:00Z",
+      "action": "Растягиваться 10 минут",
+      "is_healthy": true,
+      "nice_habit": 6,
+      "period": "1 day",
+      "reward": "Медитация",
+      "action_time": "00:10:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 7,
+    "fields": {
+      "title": "Витамины",
+      "owner": 7,
+      "place": "Кухня",
+      "time": "2023-01-04T08:30:00Z",
+      "action": "Принять витамины",
+      "is_healthy": true,
+      "nice_habit": 7,
+      "period": "1 day",
+      "reward": "Рисование",
+      "action_time": "00:02:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 8,
+    "fields": {
+      "title": "Дыхательные упражнения",
+      "owner": 8,
+      "place": "Тихая комната",
+      "time": "2023-01-04T12:00:00Z",
+      "action": "Дышать по методике",
+      "is_healthy": true,
+      "nice_habit": 8,
+      "period": "1 day",
+      "reward": "Йога",
+      "action_time": "00:05:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 9,
+    "fields": {
+      "title": "Ранний подъем",
+      "owner": 9,
+      "place": "Спальня",
+      "time": "2023-01-05T06:00:00Z",
+      "action": "Проснуться без будильника",
+      "is_healthy": true,
+      "nice_habit": 9,
+      "period": "1 day",
+      "reward": "Дневник",
+      "action_time": "00:01:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 10,
+    "fields": {
+      "title": "Здоровый обед",
+      "owner": 1,
+      "place": "Кухня",
+      "time": "2023-01-05T13:00:00Z",
+      "action": "Приготовить салат",
+      "is_healthy": true,
+      "nice_habit": 10,
+      "period": "1 day",
+      "reward": "Ароматерапия",
+      "action_time": "00:30:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 11,
+    "fields": {
+      "title": "Приседания",
+      "owner": 2,
+      "place": "Дом",
+      "time": "2023-01-06T18:00:00Z",
+      "action": "Сделать 50 приседаний",
+      "is_healthy": true,
+      "nice_habit": 11,
+      "period": "1 day",
+      "reward": "Сериал",
+      "action_time": "00:10:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 12,
+    "fields": {
+      "title": "Планка",
+      "owner": 3,
+      "place": "Гостиная",
+      "time": "2023-01-06T19:00:00Z",
+      "action": "Держать планку 2 минуты",
+      "is_healthy": true,
+      "nice_habit": 12,
+      "period": "1 day",
+      "reward": "Гитара",
+      "action_time": "00:02:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 13,
+    "fields": {
+      "title": "Фрукты вместо сладкого",
+      "owner": 4,
+      "place": "Кухня",
+      "time": "2023-01-07T15:00:00Z",
+      "action": "Съесть фрукт",
+      "is_healthy": true,
+      "nice_habit": 13,
+      "period": "1 day",
+      "reward": "Готовка",
+      "action_time": "00:05:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 14,
+    "fields": {
+      "title": "Прогулка после еды",
+      "owner": 5,
+      "place": "Улица",
+      "time": "2023-01-07T20:00:00Z",
+      "action": "Гулять 15 минут",
+      "is_healthy": true,
+      "nice_habit": 14,
+      "period": "1 day",
+      "reward": "Фото",
+      "action_time": "00:15:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 15,
+    "fields": {
+      "title": "Контрастный душ",
+      "owner": 6,
+      "place": "Ванная",
+      "time": "2023-01-08T07:45:00Z",
+      "action": "Принять душ",
+      "is_healthy": true,
+      "nice_habit": 15,
+      "period": "1 day",
+      "reward": "Пазлы",
+      "action_time": "00:10:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 16,
+    "fields": {
+      "title": "Здоровый ужин",
+      "owner": 7,
+      "place": "Кухня",
+      "time": "2023-01-08T19:00:00Z",
+      "action": "Приготовить рыбу",
+      "is_healthy": true,
+      "nice_habit": 16,
+      "period": "1 day",
+      "reward": "Садоводство",
+      "action_time": "00:40:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 17,
+    "fields": {
+      "title": "Чтение перед сном",
+      "owner": 8,
+      "place": "Кровать",
+      "time": "2023-01-09T22:00:00Z",
+      "action": "Читать 15 минут",
+      "is_healthy": true,
+      "nice_habit": 17,
+      "period": "1 day",
+      "reward": "Игры",
+      "action_time": "00:15:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 18,
+    "fields": {
+      "title": "Позитивное мышление",
+      "owner": 9,
+      "place": "Дневник",
+      "time": "2023-01-09T09:00:00Z",
+      "action": "Записать 3 хорошие вещи",
+      "is_healthy": true,
+      "nice_habit": 18,
+      "period": "1 day",
+      "reward": "Пение",
+      "action_time": "00:05:00",
+      "is_public": true
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 19,
+    "fields": {
+      "title": "Сон 8 часов",
+      "owner": 1,
+      "place": "Спальня",
+      "time": "2023-01-10T23:00:00Z",
+      "action": "Лечь спать вовремя",
+      "is_healthy": true,
+      "nice_habit": 19,
+      "period": "1 day",
+      "reward": "Массаж",
+      "action_time": "08:00:00",
+      "is_public": false
+    }
+  },
+  {
+    "model": "tracker.HealthyHabit",
+    "pk": 20,
+    "fields": {
+      "title": "Зарядка для глаз",
+      "owner": 2,
+      "place": "Рабочий стол",
+      "time": "2023-01-10T16:00:00Z",
+      "action": "Делать упражнения",
+      "is_healthy": true,
+      "nice_habit": 20,
+      "period": "2 hours",
+      "reward": "Звезды",
+      "action_time": "00:05:00",
+      "is_public": true
+    }
+  }
+]
