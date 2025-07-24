@@ -1,55 +1,32 @@
 from datetime import timedelta
+from email.policy import default
 
 from django.db import models
 from users.models import User
 
 
 # Create your models here.
-class NiceHabit(models.Model):
+class Habit(models.Model):
     '''
-    Модель приятной привычки
+    Модель привычки
     '''
-    title = models.CharField(max_length=100)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    place = models.CharField(max_length=100, blank=True, null=True)
-    time = models.DateTimeField(auto_now_add=True)
-    action = models.CharField(max_length=100, blank=True, null=True)
-    is_healthy = models.BooleanField(default=False)
-    period = models.CharField(max_length=10, blank=True, null=True, default='1 week')
-    action_time = models.TimeField(default=timedelta(seconds=120))
-    is_public = models.BooleanField(default=False)
+    title = models.CharField(max_length=100) # название привычки
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) # "хозяин" привычки
+    place = models.CharField(max_length=100, blank=True, null=True) # место выполнения
+    time = models.TimeField(auto_now_add=True) # время, когда необходимо выполнять привычку
+    action = models.CharField(max_length=100, blank=True, null=True) # действие, которое надо выполнить
+    is_healthy = models.BooleanField(default=True) # флаг полезной привычки
+    nice_habit = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True) # связанная приятная привычка
+    period = models.IntegerField(default=7) # периодичность выполнения
+    reward = models.CharField(max_length=100, blank=True, null=True) # награда за выполнение полезной привычки
+    action_time = models.IntegerField(default=120) # время на выполнение действия
+    is_public = models.BooleanField(default=False) # флаг публичности
 
     def __str__(self):
-        return f'{self.title} - {self.owner} | healthy: {self.is_healthy}'
+        return f'я буду {self.title} в {self.time} в {self.place}'
 
 
     class Meta:
         verbose_name = 'Привычка'
         verbose_name_plural = 'Привычки'
-        ordering = ['title', 'owner', 'place']
-
-
-class HealthyHabit(models.Model):
-    '''
-    Модель полезной привычки
-    '''
-    title = models.CharField(max_length=100)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    place = models.CharField(max_length=100, blank=True, null=True)
-    time = models.DateTimeField(auto_now_add=True)
-    action = models.CharField(max_length=100, blank=True, null=True)
-    is_healthy = models.BooleanField(default=True)
-    nice_habit = models.ForeignKey(NiceHabit, on_delete=models.CASCADE, blank=True, null=True)
-    period = models.CharField(max_length=10, blank=True, null=True, default='1 week')
-    reward = models.CharField(max_length=100, blank=True, null=True)
-    action_time = models.TimeField(default=timedelta(seconds=120))
-    is_public = models.BooleanField(default=False)
-
-    def __str__(self):
-        return f'{self.title} - {self.owner} | healthy: {self.is_healthy}'
-
-
-    class Meta:
-        verbose_name = 'Привычка'
-        verbose_name_plural = 'Привычки'
-        ordering = ['title', 'owner', 'place']
+        ordering = ['id', 'title', 'owner', 'place']
