@@ -37,7 +37,8 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=True)
     telegram_id = models.CharField(max_length=50, null=True, blank=True, verbose_name="Telegram")
     telegram_code = models.CharField(max_length=50, null=True, blank=True, verbose_name="Telegram code")
-    telegram_verified = models.BooleanField(default=False, verbose_name="Подтверждение Telegram ID")
+    is_telegram_verified = models.BooleanField(default=False, verbose_name="Подтверждение Telegram ID")
+    telegram_chat_id = models.CharField(null=True, blank=True, verbose_name="Telegram chat id")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

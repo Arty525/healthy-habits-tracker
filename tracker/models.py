@@ -23,7 +23,7 @@ class Habit(models.Model):
     is_public = models.BooleanField(default=False) # флаг публичности
 
     def __str__(self):
-        return f'я буду {self.title} в {self.time} в {self.place}'
+        return f'{self.title} в {self.time} в {self.place}'
 
 
     class Meta:

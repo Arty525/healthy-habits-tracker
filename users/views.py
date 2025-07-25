@@ -85,7 +85,7 @@ class UserVerifyTelegramIDAPIView(generics.UpdateAPIView):
         user = request.user
         if user.telegram_code == request.data.get('telegram_code'):
             user.telegram_code = None
-            user.telegram_verified = True
+            user.is_telegram_verified = True
             user.save()
             sync_send_telegram_message('Уведомления подключены')
             return Response(status=status.HTTP_200_OK)

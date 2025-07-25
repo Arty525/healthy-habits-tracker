@@ -186,6 +186,8 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = "Europe/Moscow"
+TIME_ZONE = 'Europe/Moscow'  # Ваш часовой пояс
+USE_TZ = True  # Должно быть True
 
 # Флаг отслеживания выполнения задач
 CELERY_TASK_TRACK_STARTED = True
@@ -196,9 +198,9 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 CELERY_BEAT_SCHEDULE = {
-    'check_last_login': {
-        'task': 'users.tasks.check_last_login',
-        'schedule': timedelta(minutes=1),
+    'habits_reminder': {
+        'task': 'tracker.tasks.habits_reminder',
+        'schedule': timedelta(seconds=60),
     },
 }
 
