@@ -1,7 +1,7 @@
-from datetime import timedelta
-from email.policy import default
-
+from django.utils import timezone
+from time import localtime
 from django.db import models
+
 from users.models import User
 
 
@@ -16,8 +16,12 @@ class Habit(models.Model):
     time = models.TimeField(auto_now_add=True) # время, когда необходимо выполнять привычку
     action = models.CharField(max_length=100, blank=True, null=True) # действие, которое надо выполнить
     is_healthy = models.BooleanField(default=True) # флаг полезной привычки
-    nice_habit = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True) # связанная приятная привычка
+    nice_habit = models.ForeignKey('self', on_delete=models.CASCADE,
+                                   blank=True, null=True) # связанная приятная привычка
     period = models.IntegerField(default=7) # периодичность выполнения
+    last_action = models.DateTimeField(
+        default=timezone.localtime(timezone.now())
+    ) # дата и время когда последний раз была выполнена привычка
     reward = models.CharField(max_length=100, blank=True, null=True) # награда за выполнение полезной привычки
     action_time = models.IntegerField(default=120) # время на выполнение действия
     is_public = models.BooleanField(default=False) # флаг публичности
