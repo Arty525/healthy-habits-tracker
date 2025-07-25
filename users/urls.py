@@ -6,7 +6,7 @@ from .views import (
     UserListAPIView,
     UserRetrieveAPIView,
     UserDestroyAPIView,
-    UserUpdateAPIView,
+    UserUpdateAPIView, UserVerifyTelegramIDAPIView,
 )
 
 app_name = "users"
@@ -18,4 +18,6 @@ urlpatterns = [
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"), # обновление токена авторизации
     path("registration/", UserCreateAPIView.as_view(), name="registration"), # регистрация пользователя
     path("update/<int:pk>", UserUpdateAPIView.as_view(), name="update_user"), # обновление данных пользователя
+    path("<int:pk>/telegram_verification/", UserVerifyTelegramIDAPIView.as_view(),
+         name="telegram_verification"), # верификация Telegram id
 ]

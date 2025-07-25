@@ -16,6 +16,6 @@ class UserAdmin(UserAdmin):
             'fields': ('email', 'password1', 'password2'),
         }),
     )
-    list_display = ('email', 'first_name', 'last_name', 'is_active')
+    list_display = ('id', 'email', 'first_name', 'last_name', 'is_active', 'telegram_id', 'telegram_verified')
     ordering = ('email',)
     search_fields = ('email',)

@@ -201,3 +201,8 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': timedelta(minutes=1),
     },
 }
+
+# Настройки телеграм бота
+TELEGRAM_BOT_TOKEN = 'os.getenv("TG_BOT_TOKEN")' # Токен телеграм бота
+TELEGRAM_CHAT_ID = 'hht525_bot'  # Для отправки уведомлений
+
