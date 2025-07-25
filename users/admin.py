@@ -7,7 +7,7 @@ from users.models import User
 class UserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name', 'telegram_id')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'telegram_id', 'telegram_chat_id')}),
         ('Permissions', {'fields': ('is_active', 'is_superuser', 'is_telegram_verified')}),
     )
     add_fieldsets = (

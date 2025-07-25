@@ -13,7 +13,7 @@ class Habit(models.Model):
     title = models.CharField(max_length=100) # название привычки
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) # "хозяин" привычки
     place = models.CharField(max_length=100, blank=True, null=True) # место выполнения
-    time = models.TimeField(auto_now_add=True) # время, когда необходимо выполнять привычку
+    time = models.TimeField(default=timezone.localtime(timezone.now())) # время, когда необходимо выполнять привычку
     action = models.CharField(max_length=100, blank=True, null=True) # действие, которое надо выполнить
     is_healthy = models.BooleanField(default=True) # флаг полезной привычки
     nice_habit = models.ForeignKey('self', on_delete=models.CASCADE,

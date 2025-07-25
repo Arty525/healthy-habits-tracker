@@ -2,7 +2,7 @@ from celery import shared_task
 from django.utils import timezone
 from datetime import timedelta, time, datetime
 from .models import User, Habit
-from .services import send_telegram_message
+from .services import send_telegram_message, sync_send_telegram_message
 
 
 @shared_task
@@ -21,10 +21,17 @@ def habits_reminder():
     time_plus_10min = (now_datetime + timedelta(minutes=10)).time()
     habits = Habit.objects.all()
     for habit in habits:
-        if (timezone.localtime(timezone.now()) - timedelta(days=habit.period)).date() == habit.last_action.date():
-            if time_plus_1h == habit.time:
-                print(f'через 1 час у вас запланировано {habit}')
-            if time_plus_10min == habit.time:
-                print(f'через 10 минут у вас запланировано {habit}')
+        chat_id = habit.owner.telegram_chat_id
+        if chat_id is not None:
+            print(f'chat_id: {chat_id}')
+            send_telegram_message(385064001, f'у вас запланировано {habit}')
+        # if (timezone.localtime(timezone.now()) - timedelta(days=habit.period)).date() == habit.last_action.date():
+        #
+        #     print(f'chat id: {chat_id}')
+        #     if time_plus_1h == habit.time:
+        #         print(f'через 1 час у вас запланировано {habit}')
+        #         sync_send_telegram_message(chat_id, f'через 1 час у вас запланировано {habit}')
+        #     if time_plus_10min == habit.time:
+        #         sync_send_telegram_message(chat_id, f'через 10 минут у вас запланировано {habit}')
 
 # Надо добавить проверку периодичности выполнения и сделать проверку на время выполнения.

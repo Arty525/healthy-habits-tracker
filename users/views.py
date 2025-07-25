@@ -43,9 +43,10 @@ class UserUpdateAPIView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticated, IsSuperUser]
 
     def update(self, request, *args, **kwargs):
-        if self.request.data.get('telegram_id'):
+        if self.request.data.get('telegram_chat_id'):
+            chat_id = self.request.data.get('telegram_chat_id')
             verify_code = 1000 + secrets.randbelow(9000)
-            sync_send_telegram_message(f'Ваш код верификации: {verify_code}')
+            sync_send_telegram_message(chat_id, f'Ваш код верификации: {verify_code}')
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -62,9 +63,10 @@ class UserCreateAPIView(generics.CreateAPIView):
     permission_classes = [AllowAny]
 
     def perform_create(self, serializer):
-        if self.request.data.get('telegram_id'):
+        if self.request.data.get('telegram_chat_id'):
+            chat_id = self.request.data.get('telegram_chat_id')
             verify_code = 1000 + secrets.randbelow(9000)
-            sync_send_telegram_message(f'''Ваш код верификации: {verify_code}
+            sync_send_telegram_message(chat_id, f'''Ваш код верификации: {verify_code}
 Для подтверждения Telegram ID авторизуйтесь и введите код''')
             user = serializer.save(is_active=True, telegram_code=verify_code)
         else:
@@ -87,7 +89,7 @@ class UserVerifyTelegramIDAPIView(generics.UpdateAPIView):
             user.telegram_code = None
             user.is_telegram_verified = True
             user.save()
-            sync_send_telegram_message('Уведомления подключены')
+            sync_send_telegram_message(user.telegram_chat_id, 'Уведомления подключены')
             return Response(status=status.HTTP_200_OK)
-        sync_send_telegram_message('Введен неверный код верификации')
+        sync_send_telegram_message(user.telegram_chat_id, 'Введен неверный код верификации')
         return Response(status=status.HTTP_400_BAD_REQUEST)

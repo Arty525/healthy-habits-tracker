@@ -16,6 +16,7 @@ class HabitAdmin(admin.ModelAdmin):
         'reward',
         'action_time',
         'is_public',
+        'time'
     )
     list_display = ('id', 'title', 'owner', 'place', 'is_healthy', 'is_public', 'formatted_time', 'period')
     list_filter = ('is_healthy', 'is_public')

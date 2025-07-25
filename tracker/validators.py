@@ -29,10 +29,11 @@ class ActionTimeValidator:
 
     def __call__(self, fields):
         action_time = fields.get("action_time")
-        if not (0 < action_time < 120):
-            raise ValidationError(
-                'Время выполнения привычки должно быть от 1 до 120 секунд.'
-            )
+        if action_time is not None:
+            if not (0 < action_time < 120):
+                raise ValidationError(
+                    'Время выполнения привычки должно быть от 1 до 120 секунд.'
+                )
 
 
 class NiceHabitValidator:
@@ -79,7 +80,8 @@ class PeriodValidator:
 
     def __call__(self, fields):
         period = fields.get("period")
-        if not (0 < period <= 7):
-            raise ValidationError(
-                'Период должен быть от 1 до 7 дней'
-            )
+        if period is not None:
+            if not (0 < period <= 7):
+                raise ValidationError(
+                    'Период должен быть от 1 до 7 дней'
+                )
