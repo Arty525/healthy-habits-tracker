@@ -1,10 +1,11 @@
-from kombu.asynchronous.http import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.response import Response
 from .models import Habit
-from rest_framework import generics, viewsets
+from rest_framework import generics, viewsets, status
 from .paginators import CustomPagination
 from .permissions import IsSuperUser, IsOwner
 from .serializers import HabitSerializer
+from .services import send_telegram_message, _async_send_telegram_message, sync_send_telegram_message
 
 
 class HabitsViewSet(viewsets.ModelViewSet):
@@ -33,3 +34,10 @@ class PublicHabitsAPIView(generics.ListAPIView):
     serializer_class = HabitSerializer
     permission_classes = (IsAuthenticated,)
     pagination_class = CustomPagination
+
+
+class TestTGAPIView(generics.GenericAPIView):
+    permission_classes = (AllowAny,)
+    def get(self, *args, **kwargs):
+        sync_send_telegram_message('385064001', 'test message')
+        return Response(status=status.HTTP_200_OK)

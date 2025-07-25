@@ -2,7 +2,7 @@ import secrets
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from tracker.permissions import IsSuperUser, IsOwner, IsCurrentUser
-from tracker.services import send_telegram_message, sync_send_telegram_message
+from tracker.services import send_telegram_message
 from .models import User
 from .serializers import UserSerializer
 from rest_framework import generics, status
@@ -46,7 +46,7 @@ class UserUpdateAPIView(generics.UpdateAPIView):
         if self.request.data.get('telegram_chat_id'):
             chat_id = self.request.data.get('telegram_chat_id')
             verify_code = 1000 + secrets.randbelow(9000)
-            sync_send_telegram_message(chat_id, f'Ваш код верификации: {verify_code}')
+            send_telegram_message(chat_id, f'Ваш код верификации: {verify_code}')
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -66,7 +66,7 @@ class UserCreateAPIView(generics.CreateAPIView):
         if self.request.data.get('telegram_chat_id'):
             chat_id = self.request.data.get('telegram_chat_id')
             verify_code = 1000 + secrets.randbelow(9000)
-            sync_send_telegram_message(chat_id, f'''Ваш код верификации: {verify_code}
+            send_telegram_message(chat_id, f'''Ваш код верификации: {verify_code}
 Для подтверждения Telegram ID авторизуйтесь и введите код''')
             user = serializer.save(is_active=True, telegram_code=verify_code)
         else:
@@ -89,7 +89,7 @@ class UserVerifyTelegramIDAPIView(generics.UpdateAPIView):
             user.telegram_code = None
             user.is_telegram_verified = True
             user.save()
-            sync_send_telegram_message(user.telegram_chat_id, 'Уведомления подключены')
+            send_telegram_message(user.telegram_chat_id, 'Уведомления подключены')
             return Response(status=status.HTTP_200_OK)
-        sync_send_telegram_message(user.telegram_chat_id, 'Введен неверный код верификации')
+        send_telegram_message(user.telegram_chat_id, 'Введен неверный код верификации')
         return Response(status=status.HTTP_400_BAD_REQUEST)
