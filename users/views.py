@@ -1,11 +1,12 @@
 from django_filters import OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
+from requests import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from tracker.permissions import IsSuperUser
 from .models import User
 from .serializers import UserSerializer
-from rest_framework import generics
+from rest_framework import generics, status
 
 
 class UserListAPIView(generics.ListAPIView):
@@ -53,5 +54,5 @@ class UserCreateAPIView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         user = serializer.save(is_active=True)
-        user.set_password(user.password)
+        user.set_password(self.request.data['password'])
         user.save()
