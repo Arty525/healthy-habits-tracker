@@ -29,7 +29,7 @@ class ActionTimeValidator:
     def __call__(self, fields):
         action_time = fields.get("action_time")
         if action_time is not None:
-            if not (0 < action_time < 120):
+            if not (0 < action_time <= 120):
                 raise ValidationError(
                     "Время выполнения привычки должно быть от 1 до 120 секунд."
                 )
