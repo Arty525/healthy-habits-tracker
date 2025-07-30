@@ -1,0 +1,172 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user1@example.com",
+      "first_name": "Иван",
+      "last_name": "Иванов",
+      "phone_number": "+79123456781",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user2@example.com",
+      "first_name": "Петр",
+      "last_name": "Петров",
+      "phone_number": "+79123456782",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user3@example.com",
+      "first_name": "Анна",
+      "last_name": "Сидорова",
+      "phone_number": "+79123456783",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user4@example.com",
+      "first_name": "Мария",
+      "last_name": "Кузнецова",
+      "phone_number": "+79123456784",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user5@example.com",
+      "first_name": "Алексей",
+      "last_name": "Смирнов",
+      "phone_number": "+79123456785",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user6@example.com",
+      "first_name": "Елена",
+      "last_name": "Попова",
+      "phone_number": "+79123456786",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user7@example.com",
+      "first_name": "Дмитрий",
+      "last_name": "Васильев",
+      "phone_number": "+79123456787",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user8@example.com",
+      "first_name": "Ольга",
+      "last_name": "Новикова",
+      "phone_number": "+79123456788",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user9@example.com",
+      "first_name": "Сергей",
+      "last_name": "Федоров",
+      "phone_number": "+79123456789",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Gjn8r1ZMdN3jZ7oD$Y5wBZP6Vz4UO6kL9X2W8Q1E2R3T4Y5U6I7O8P9=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "user10@example.com",
+      "first_name": "Татьяна",
+      "last_name": "Морозова",
+      "phone_number": "+79123456790",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
