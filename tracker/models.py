@@ -7,6 +7,7 @@ class Habit(models.Model):
     """
     Модель привычки
     """
+
     title = models.CharField(max_length=100)  # название привычки
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True
