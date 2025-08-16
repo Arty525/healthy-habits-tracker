@@ -72,7 +72,7 @@ jobs:
 
     steps:
       - name: PEP8 compliance check
-        run: flake8
+        run: python -m flake8
 
   build:
     runs-on: ubuntu-latest
