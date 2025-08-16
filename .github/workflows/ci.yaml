@@ -113,5 +113,4 @@ jobs:
             sudo docker stop myapp || true
             sudo docker rm myapp || true
             sudo docker run -d --name myapp -p 80:8000 ${{ secrets.DOCKER_HUB_USERNAME }}/myapp:${{ github.sha }}
-            sudo docker-compose up
           EOF
