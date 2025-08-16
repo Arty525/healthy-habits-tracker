@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   redis:
     image: redis:7-alpine
@@ -61,4 +59,5 @@ services:
     restart: unless-stopped
 
 volumes:
+  redis_data:
   postgres_data:

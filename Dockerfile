@@ -12,6 +12,8 @@ WORKDIR /app
 # Сначала копируем только requirements.txt
 COPY requirements.txt .
 
+RUN pip install --no-cache-dir celery redis
+
 # Установка зависимостей с обработкой платформо-специфичных пакетов
 RUN pip install --no-cache-dir -r requirements.txt \
     && pip uninstall -y pywin32 || true  # Удаляем pywin32 если он был ошибочно установлен
