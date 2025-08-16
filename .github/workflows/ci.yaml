@@ -71,16 +71,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13'
+          python-version: '3.11'
 
-      - name: PEP8 compliance check
-        run: python -m flake8
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run PEP8 compliance check
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
   build:
     runs-on: ubuntu-latest
