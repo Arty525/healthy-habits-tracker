@@ -32,7 +32,12 @@ STRIPE_API_KEY = os.getenv("STRIPE_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+CSRF_TRUSTED_ORIGINS = [ "http://51.250.17.3", "http://51.250.17.3:80", "http://51.250.17.3:8080",
+                         "http://127.0.0.1:80", "http://127.0.0.1" , "http://127.0.0.1:8080"]
+CORS_ALLOWED_ORIGINS = ["*"]
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition

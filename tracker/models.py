@@ -7,13 +7,14 @@ class Habit(models.Model):
     """
     Модель привычки
     """
+
     title = models.CharField(max_length=100)  # название привычки
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, null=True, blank=True
     )  # "хозяин" привычки
     place = models.CharField(max_length=100, blank=True, null=True)  # место выполнения
     time = models.TimeField(
-        default=timezone.localtime(timezone.now())
+        default=timezone.now
     )  # время, когда необходимо выполнять привычку
     action = models.CharField(
         max_length=100, blank=True, null=True
@@ -24,7 +25,7 @@ class Habit(models.Model):
     )  # связанная приятная привычка
     period = models.IntegerField(default=7)  # периодичность выполнения
     last_action = models.DateTimeField(
-        default=timezone.localtime(timezone.now())
+        default=timezone.now
     )  # дата и время когда последний раз была выполнена привычка
     reward = models.CharField(
         max_length=100, blank=True, null=True
