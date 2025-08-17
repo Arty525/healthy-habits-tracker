@@ -26,23 +26,31 @@ services:
       - redis
     restart: unless-stopped
   nginx:
-    build: .
+    image: nginx:alpine
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+    networks:
+      - app_network
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
-      - "8000:8000"
+      - "8000:8080"
     env_file:
       - .env
     depends_on:
       - db
     restart: unless-stopped
+    expose:
+      - "8000"
+    networks:
+      - app_network
 
   db:
     image: postgres:14
@@ -56,6 +64,10 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+
+networks:
+  app_network:
+    driver: bridge
 
 volumes:
   redis_data:
